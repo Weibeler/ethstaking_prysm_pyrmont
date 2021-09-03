@@ -409,8 +409,7 @@ Group=lighthousebeacon
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/usr/local/bin/lighthouse bn --network mainnet --datadir /var/lib/lighthouse --staking --eth1-endpoints http://127.0.0.1:8545,https://eth-mainnet.alchemyapi.io/v2/yourAPIkey,https://mainnet.infura.io/v3/yourAPIkey
-[Install]
+ExecStart=/usr/local/bin/lighthouse bn --network mainnet --datadir /var/lib/lighthouse --staking --eth1-endpoints http://127.0.0.1:8545,https://eth-mainnet.alchemyapi.io/v2/yourAPIkey,https://mainnet.infura.io/v3/yourAPIkey --monitoring-endpoint https://beaconcha.in/api/v1/client/metrics?apikey=SzN3dFRheVR0ekN6ZmpXMGVOYmll&machine=asuspn50[Install]
 WantedBy=multi-user.target
 ```
 
