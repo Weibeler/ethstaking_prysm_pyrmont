@@ -590,17 +590,19 @@ https://lighthouse-book.sigmaprime.io/installation-binaries.html
   
 Link to latest bininaries:
 https://github.com/sigp/lighthouse/releases
-  
+
+Download PGP Signature
 ```
-cd ~
+curl -LO https://github.com/sigp/lighthouse/releases/download/v2.1.0/lighthouse-v2.1.0-x86_64-unknown-linux-gnu.tar.gz.asc
 ```
-```
-sudo apt install curl
-```
+Download Binary
 ```
 curl -LO https://github.com/sigp/lighthouse/releases/download/VERSION/lighthouse-VERSION-ARCHITECTURE-unknown-linux-gnu.tar.gz
 ```
-
+Verify PGP Key
+```
+gpg --verify lighthouse-v2.1.0-x86_64-unknown-linux-gnu.tar.gz.asc
+```
 Stop the Lighthouse client services.
 ```
 sudo systemctl stop lighthousevalidator
