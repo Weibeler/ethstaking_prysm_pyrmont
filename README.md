@@ -593,7 +593,7 @@ https://github.com/sigp/lighthouse/releases
 
 Download PGP Signature
 ```
-curl -LO https://github.com/sigp/lighthouse/releases/download/v2.1.0/lighthouse-v2.1.0-x86_64-unknown-linux-gnu.tar.gz.asc
+curl -LO https://github.com/sigp/lighthouse/releases/download/VERSION/lighthouse-VERSION-ARCHITECTURE-unknown-linux-gnu.tar.gz.asc
 ```
 Download Binary
 ```
@@ -601,7 +601,7 @@ curl -LO https://github.com/sigp/lighthouse/releases/download/VERSION/lighthouse
 ```
 Verify PGP Key
 ```
-gpg --verify lighthouse-v2.1.0-x86_64-unknown-linux-gnu.tar.gz.asc
+gpg --verify lighthouse-VERSION-ARCHITECTURE-unknown-linux-gnu.tar.gz.asc
 ```
 Stop the Lighthouse client services.
 ```
