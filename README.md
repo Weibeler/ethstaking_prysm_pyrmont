@@ -557,14 +557,14 @@ sudo systemctl status geth
 ```
 Monitor
 ```
-sudo journalctl -fu
+sudo journalctl -fu geth
 ```
 ```
 sudo systemctl start lighthousebeacon
 ```
 Check for errors
 ```
-$ sudo systemctl status lighthousebeacon
+sudo systemctl status lighthousebeacon
 ```
 Monitor  
 ```
@@ -573,11 +573,13 @@ sudo journalctl -fu lighthousebeacon
 ```
 sudo systemctl start lighthousevalidator
 ```
+Check for errors  
 ```
-sudo systemctl status lighthousevalidator # <-- Check for errors
+sudo systemctl status lighthousevalidator
 ```
+Monitor
 ```
-sudo journalctl -fu lighthousevalidator # <-- Monitor
+sudo journalctl -fu lighthousevalidator
 ```
 
 Updating Lighthouse
@@ -614,7 +616,6 @@ sudo systemctl stop lighthousevalidator
 ```
 sudo systemctl stop lighthousebeacon
 ```
-
 Extract the binary from the archive and copy to the /usr/local/bin directory. Modify the URL name as necessary.
 ```
 tar xvf lighthouse-VERSION-ARCHITECTURE-unknown-linux-gnu.tar.gz
@@ -622,7 +623,6 @@ tar xvf lighthouse-VERSION-ARCHITECTURE-unknown-linux-gnu.tar.gz
 ```
 sudo cp lighthouse /usr/local/bin
 ```
-
 Check version
 ```
 cd /usr/local/bin
@@ -630,7 +630,6 @@ cd /usr/local/bin
 ```
 lighthouse -V
 ```
-
 Restart the Beacon service and check for errors
 ```
 sudo systemctl start lighthousebeacon
@@ -655,7 +654,6 @@ Monitor
 ```
 sudo journalctl -fu lighthousevalidator
 ```
-
 Clean up the extracted files.
 ```
 cd ~
