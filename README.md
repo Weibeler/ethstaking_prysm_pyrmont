@@ -551,20 +551,24 @@ sudo apt update && sudo apt upgrade
 ```
 sudo systemctl start geth
 ```
+Check for errors  
 ```
-sudo systemctl status geth # <-- Check for errors
+sudo systemctl status geth
 ```
+Monitor
 ```
-sudo journalctl -fu geth # <-- Monitor
+sudo journalctl -fu
 ```
 ```
 sudo systemctl start lighthousebeacon
 ```
+Check for errors
 ```
-$ sudo systemctl status lighthousebeacon # <-- Check for errors
+$ sudo systemctl status lighthousebeacon
 ```
+Monitor  
 ```
-sudo journalctl -fu lighthousebeacon # <-- Monitor
+sudo journalctl -fu lighthousebeacon
 ```
 ```
 sudo systemctl start lighthousevalidator
