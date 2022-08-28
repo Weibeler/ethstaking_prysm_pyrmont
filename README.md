@@ -245,8 +245,10 @@ Check Sync Status - To check your Eth1 node sync status use the following comman
 ```
 geth attach http://127.0.0.1:8545
 ```
-> eth.syncing
-
+Type...
+```  
+eth.syncing
+```
 If false is returned then your sync is complete. If syncing data is returned then you are still syncing. For reference there are roughly 700–800 million knownStates.
 
 Here is another way to verify if geth is syncing.
@@ -261,7 +263,8 @@ curl --request POST localhost:8545 \
     "id":1
     }'
 ```
- 
+If false is returned then your sync is complete.
+  
 Download Lighthouse
 -------------------
 The Lighthouse client is a single binary which encapsulates the functionality of the beacon chain and validator. This step will download and prepare the Lighthouse binary.
