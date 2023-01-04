@@ -585,6 +585,80 @@ Monitor
 sudo journalctl -fu lighthousevalidator
 ```
 
+Upgrading Besu
+==============
+
+Click here for the latest release of Besu. 
+
+https://github.com/hyperledger/besu/releases
+
+In the Download link section copy the download link to the tar.gz file. Be sure to copy the correct link.  Modify the URL in the instructions below to match the download link for the latest version.
+
+```
+cd ~
+```
+
+```
+curl -LO https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/22.7.2/besu-22.7.2.tar.gz
+```
+
+Stop the Besu service.
+
+```
+sudo systemctl stop besu
+```
+
+Extract the files from the archive and copy to the /usr/local/bin directory. Modify the file name to match the downloaded version.
+
+```
+tar xvf besu-22.7.2.tar.gz
+```
+
+Remove the old files
+
+```
+sudo rm -r /usr/local/bin/besu
+```
+```
+sudo cp -a besu-22.7.7 /usr/local/bin/besu
+```
+
+Restart the services and check for errors.
+
+```
+sudo systemctl start besu
+```
+
+Check for errors
+
+```
+sudo systemctl status besu
+```
+
+Monitor
+
+```
+sudo journalctl -fu besu
+```
+
+```
+sudo journalctl -fu lighthousebeacon
+```
+
+Clean up the files. Modify the file name to match the downloaded version.
+
+```
+cd ~
+```
+
+```
+rm besu-22.7.2.tar.gz
+```
+
+```
+rm -r besu-22.7.2
+```
+
 Updating Lighthouse
 ===================
 
