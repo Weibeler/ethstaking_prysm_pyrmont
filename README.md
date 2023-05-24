@@ -589,8 +589,10 @@ Upgrading Besu
 ==============
 
 Get the lastest version of Besu.
-  
+
+```  
 /usr/local/bin/besu/bin/besu --version  
+```
   
 Click here for the latest release of Besu. 
 
@@ -706,7 +708,7 @@ sudo cp lighthouse /usr/local/bin
 ```
 Check version
 ```
-cd /usr/local/bin
+/usr/local/bin/lighthouse -V
 ```
 ```
 lighthouse -V
