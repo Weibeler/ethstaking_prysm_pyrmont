@@ -710,9 +710,6 @@ Check version
 ```
 /usr/local/bin/lighthouse -V
 ```
-```
-lighthouse -V
-```
 Restart the Beacon service and check for errors
 ```
 sudo systemctl start lighthousebeacon
