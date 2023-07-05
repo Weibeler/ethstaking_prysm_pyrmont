@@ -480,26 +480,32 @@ Create and Configure the Service
 
 Create a systemd service file to store the service config.
 ```
-sudo nano /etc/systemd/system/lighthousevalidator.service
+sudo vim /etc/systemd/system/lighthousevalidator.service
 ```
 
 Paste the following into the file.
 
 ```
-[Unit]
-Description=Lighthouse Eth2 Client Validator Node
+Unit]
+Description=Lighthouse Consensus Client VC (Mainnet)
 Wants=network-online.target
 After=network-online.target
-#BindsTo=lighthousebeacon.service  Removed 11/30/2020 per Somer
 [Service]
 User=lighthousevalidator
 Group=lighthousevalidator
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/usr/local/bin/lighthouse vc --network mainnet --datadir /var/lib/lighthouse --graffiti "Hello from ipalvr!"
+ExecStart=/usr/local/bin/lighthouse vc \
+  --network mainnet \
+  --datadir /var/lib/lighthouse \
+  --enable-doppelganger-protection \
+  --suggested-fee-recipient 0xb30b1311112B535c5E8aE86Ef8dD1B7f76017CD2 \
+  --graffiti "Hello from ipalvr!" \
+  --monitoring-endpoint https://beaconcha.in/api/v1/client/metrics?apikey=SzN3dFRheVR0ekN6ZmpXMGVOYmll&machine=asuspn50
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 Notable flags.
