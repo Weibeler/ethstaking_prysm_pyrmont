@@ -403,7 +403,7 @@ sudo nano /etc/systemd/system/lighthousebeacon.service
 Paste the following into the file.
 ```
 [Unit]
-Description=Lighthouse Eth2 Client Beacon Node
+Description=Lighthouse Consensus Client BN (Mainnet)
 Wants=network-online.target
 After=network-online.target
 [Service]
@@ -412,7 +412,15 @@ Group=lighthousebeacon
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/usr/local/bin/lighthouse bn --network mainnet --datadir /var/lib/lighthouse --staking --eth1-endpoints http://127.0.0.1:8545,https://eth-mainnet.alchemyapi.io/v2/yourAPIkey,https://mainnet.infura.io/v3/yourAPIkey --monitoring-endpoint https://beaconcha.in/api/v1/client/metrics?apikey=SzN3dFRheVR0ekN6ZmpXMGVOYmll&machine=asuspn50[Install]
+ExecStart=/usr/local/bin/lighthouse bn \
+  --network mainnet \
+  --datadir /var/lib/lighthouse \
+  --http \
+  --execution-endpoint http://127.0.0.1:8551 \
+  --execution-jwt /var/lib/jwtsecret/jwt.hex \
+  --checkpoint-sync-url https://2EDVFgy7GeRoyge8NqS0OwRcOjK:5ace00240f62666218e9a5377b1a0e2e@eth2-beacon-mainnet.infura.io \
+  --monitoring-endpoint https://beaconcha.in/api/v1/client/metrics?apikey=SzN3dFRheVR0ekN6ZmpXMGVOYmll&machine=asuspn50
+[Install]
 WantedBy=multi-user.target
 ```
 
