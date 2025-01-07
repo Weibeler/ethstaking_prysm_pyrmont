@@ -494,7 +494,7 @@ sudo vim /etc/systemd/system/lighthousevalidator.service
 Paste the following into the file.
 
 ```
-Unit]
+Unit
 Description=Lighthouse Consensus Client VC (Mainnet)
 Wants=network-online.target
 After=network-online.target
@@ -549,56 +549,6 @@ Once the Eth2 mainnet starts up the beacon chain and validator will automaticall
 
 Once the Eth2 mainnet starts up the beacon chain and validator will automatically start processing.
 
-Updating Geth
-=============
-
-If you need to update to the latest version of Geth follow these steps.
-```
-sudo systemctl stop lighthousevalidator
-```
-```
-sudo systemctl stop lighthousebeacon
-```
-```
-sudo systemctl stop geth
-```
-```
-sudo apt update && sudo apt upgrade
-```
-```
-sudo systemctl start geth
-```
-Check for errors  
-```
-sudo systemctl status geth
-```
-Monitor
-```
-sudo journalctl -fu geth
-```
-```
-sudo systemctl start lighthousebeacon
-```
-Check for errors
-```
-sudo systemctl status lighthousebeacon
-```
-Monitor  
-```
-sudo journalctl -fu lighthousebeacon
-```
-```
-sudo systemctl start lighthousevalidator
-```
-Check for errors  
-```
-sudo systemctl status lighthousevalidator
-```
-Monitor
-```
-sudo journalctl -fu lighthousevalidator
-```
-
 Upgrading Besu
 ==============
 
@@ -619,7 +569,7 @@ cd ~
 ```
 
 ```
-curl -LO https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/22.7.2/besu-22.7.2.tar.gz
+curl -LO https://hyperledger.jfrog.io/artifactory/besu-binaries/besu/xx.x.x/besu-xx.x.x.tar.gz
 ```
 
 Stop the Besu service.
@@ -631,7 +581,7 @@ sudo systemctl stop besu
 Extract the files from the archive and copy to the /usr/local/bin directory. Modify the file name to match the downloaded version.
 
 ```
-tar xvf besu-22.7.2.tar.gz
+tar xvf besu-xx.x.x.tar.gz
 ```
 
 Remove the old files
@@ -640,7 +590,7 @@ Remove the old files
 sudo rm -r /usr/local/bin/besu
 ```
 ```
-sudo cp -a besu-22.7.7 /usr/local/bin/besu
+sudo cp -a besu-xx.x.x /usr/local/bin/besu
 ```
 
 Restart the services and check for errors.
@@ -672,11 +622,11 @@ cd ~
 ```
 
 ```
-rm besu-22.7.2.tar.gz
+rm besu-xx.x.x.tar.gz
 ```
 
 ```
-rm -r besu-22.7.2
+rm -r besu-xx.x.x
 ```
 
 Updating Lighthouse
